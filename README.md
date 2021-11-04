@@ -1,4 +1,6 @@
-# Introduction:
+# GitLeaks: Guide to Preventing Leaks
+
+## Introduction:
 We use Github for version control and as a means to store our code on a secure location of the cloud while retaining easy accessibility and the ability to share. 
 Github uses a base branch called the "main branch" (erstwhile "Master") which contains peer reviewed production code and "Follower branch" which contains development code on top of production code that will be considered for production.
 
