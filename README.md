@@ -1,6 +1,6 @@
 # Introduction:
 We use Github for version control and as a means to store our code on a secure location of the cloud while retaining easy accessibility and the ability to share. 
-Github uses a base branch called the "Leader branch" (erstwhile "Master") which contains peer reviewed production code and "Follower branch" (erstwhile "Slave") which contains development code on top of production code that will be considered for production.
+Github uses a base branch called the "main branch" (erstwhile "Master") which contains peer reviewed production code and "Follower branch" which contains development code on top of production code that will be considered for production.
 
 
 Github uses commands such as "Push", "Pull", "Branch", "Commit", "Checkout", "Rebase", etc to create or publish the follower branches into the main repository. It follows a timeline of events to store the changes to the code over time and this allows the ability to go back in time and retrieve code.
