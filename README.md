@@ -22,7 +22,7 @@ It analyzes the code and provides error outputs upon discovering secrets within 
 
 
 # How do we install?
-Installation is easy and uses 3 steps (All steps are for MacOS/Linux) - 
+Installation is easy and uses 5 steps and takes ~15 mins (All steps are for MacOS/Linux) - 
 
 
 ## Step 1: Installing gitleaks
