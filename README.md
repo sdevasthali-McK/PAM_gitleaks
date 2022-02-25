@@ -81,12 +81,12 @@ There are no additional steps required.
 
 Explicit Run - 
 ```
-gitleaks --path='[Path_To_Repository]' --config-path='[Path_To_TOML_File]' --no-git -v
+gitleaks --path='[Path_To_Repository]' --config-path='[Path_To_TOML_File]' --no-git -v --depth=1
 ```
 
 For example: 
 ```
-gitleaks --path='/Users/sankalp_devasthali/Documents/GitRepos/pam-pamda-pydq' --config-path='/Users/sankalp_devasthali/Documents/gitleaks.toml' --no-git -v
+gitleaks --path='/Users/sankalp_devasthali/Documents/GitRepos/pam-pamda-pydq' --config-path='/Users/sankalp_devasthali/Documents/gitleaks.toml' --no-git -v --depth=1
 ```
 
 Expected output?
