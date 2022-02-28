@@ -70,23 +70,30 @@ How do we run it?
 There is plenty of documentation on the Gitleaks Git repository.
 For our purposes, we shall configure our own .toml file for the rules and provide a path to the code local repository
 
+Gitleaks runs in 2 modes - 
+1. Protect - Command that we will use by default. This command scans the currently staged or committed objects and runs the secrets rules against them
+2. Detect - Command that we can use for historic repositories or when making the repository public. It scans the whole repository and its list of commits to identify leaks
+
 
 There are 2 ways to run gitleaks:-
 
-
 Implicit Run - 
-Any time you are attempting to commit any code, github will check the complete repository for any leaks.
-There are no additional steps required.
+Any time you are attempting to commit any code, github will check the staged commits for any leaks.
+This is the default behaviour expected after installation using this guide. There are no additional steps required.
 
 
 Explicit Run - 
 ```
-gitleaks --path='[Path_To_Repository]' --config-path='[Path_To_TOML_File]' --no-git -v --depth=1
+DETECT:
+gitleaks detect --verbose --redact --source='[Path_To_Repository]' --config='[Path_To_TOML_File]' --log-ops = '[git-log options]'
+
+PROTECT:
+gitleaks detect --verbose --redact --source='[Path_To_Repository]' --config='[Path_To_TOML_File]' --staged
 ```
 
 For example: 
 ```
-gitleaks --path='/Users/sankalp_devasthali/Documents/GitRepos/pam-pamda-pydq' --config-path='/Users/sankalp_devasthali/Documents/gitleaks.toml' --no-git -v --depth=1
+--verbose --redact --source=$(git rev-parse --show-toplevel) --config=$glpath --staged
 ```
 
 Expected output?
