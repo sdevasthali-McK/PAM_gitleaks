@@ -103,27 +103,25 @@ Expected output?
 
 FAQs
 1. How do I update my gitleaks?
-A. In your Mac terminal, use command ```brew install gitleaks```. This command assumes you have brew installed
-
+  A. In your Mac terminal, use command ```brew install gitleaks```. This command assumes you have brew installed
 2. How do I update the pre-commit file?
-A. In your Mac terminal-
-  1. Navigate to the pre-commits file by using ```cd ~/.git-hooks```
-  2. Update pre-commit using ```vi pre-commit```
-  3. Press ```I``` on the keyboard for insert mode
-  4. Delete contents of whole file
-  5. Copy latest content from [https://mckinsey.box.com/s/kig70jdntmkumgd7d24wau8kruyzz1xs](https://mckinsey.box.com/s/kig70jdntmkumgd7d24wau8kruyzz1xs) and paste it in the terminal editor
-  6. Press ```esc```
-  7. Type ```:wq!``` and hit enter
-
+    In your Mac terminal-
+      1. Navigate to the pre-commits file by using ```cd ~/.git-hooks```
+      2. Update pre-commit using ```vi pre-commit```
+      3. Press ```I``` on the keyboard for insert mode
+      4. Delete contents of whole file
+      5. Copy latest content from [https://mckinsey.box.com/s/kig70jdntmkumgd7d24wau8kruyzz1xs](https://mckinsey.box.com/s/kig70jdntmkumgd7d24wau8kruyzz1xs) and paste it in the terminal editor
+      6. Press ```esc```
+      7. Type ```:wq!``` and hit enter
 3. How do I update the gitleaks.toml file?
-A. In your Mac terminal-
-  1. Navigate to the pre-commits file by using ```cd ~/.git-hooks```
-  2. Update pre-commit using ```vi gitleaks.toml```
-  3. Press ```I``` on the keyboard for insert mode
-  4. Delete contents of whole file
-  5. Copy latest content from [https://mckinsey.box.com/s/kig70jdntmkumgd7d24wau8kruyzz1xs](https://mckinsey.box.com/s/ga3o5urv3qquhyyprbevvu2hg55rjvr0) and paste it in the terminal editor
-  6. Press ```esc```
-  7. Type ```:wq!``` and hit enter
+    In your Mac terminal-
+      1. Navigate to the pre-commits file by using ```cd ~/.git-hooks```
+      2. Update pre-commit using ```vi gitleaks.toml```
+      3. Press ```I``` on the keyboard for insert mode
+      4. Delete contents of whole file
+      5. Copy latest content from [https://mckinsey.box.com/s/kig70jdntmkumgd7d24wau8kruyzz1xs](https://mckinsey.box.com/s/ga3o5urv3qquhyyprbevvu2hg55rjvr0) and paste it in the terminal editor
+      6. Press ```esc```
+      7. Type ```:wq!``` and hit enter
 
 What is next?
 - Add command explanation for various parameters of Gitleaks
