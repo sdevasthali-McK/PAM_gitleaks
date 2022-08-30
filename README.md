@@ -28,7 +28,9 @@ Installation is easy and uses 5 steps and takes ~15 mins (All steps are for MacO
 
 
 ## Step 1: Installing gitleaks
+```
 brew install gitleaks 
+```
 The above command would install the latest gitleaks from Homebrew and add it to your PATH variable.
 
 
@@ -98,6 +100,30 @@ For example:
 
 Expected output?
 ![image](https://user-images.githubusercontent.com/88150915/140373532-97ac7d1b-ff38-4f6b-9d18-6074361e9c78.png)
+
+FAQs
+1. How do I update my gitleaks?
+A. In your Mac terminal, use command ```brew install gitleaks```. This command assumes you have brew installed
+
+2. How do I update the pre-commit file?
+A. In your Mac terminal-
+  1. Navigate to the pre-commits file by using ```cd ~/.git-hooks```
+  2. Update pre-commit using ```vi pre-commit```
+  3. Press ```I``` on the keyboard for insert mode
+  4. Delete contents of whole file
+  5. Copy latest content from [https://mckinsey.box.com/s/kig70jdntmkumgd7d24wau8kruyzz1xs](https://mckinsey.box.com/s/kig70jdntmkumgd7d24wau8kruyzz1xs) and paste it in the terminal editor
+  6. Press ```esc```
+  7. Type ```:wq!``` and hit enter
+
+3. How do I update the gitleaks.toml file?
+A. In your Mac terminal-
+  1. Navigate to the pre-commits file by using ```cd ~/.git-hooks```
+  2. Update pre-commit using ```vi gitleaks.toml```
+  3. Press ```I``` on the keyboard for insert mode
+  4. Delete contents of whole file
+  5. Copy latest content from [https://mckinsey.box.com/s/kig70jdntmkumgd7d24wau8kruyzz1xs](https://mckinsey.box.com/s/ga3o5urv3qquhyyprbevvu2hg55rjvr0) and paste it in the terminal editor
+  6. Press ```esc```
+  7. Type ```:wq!``` and hit enter
 
 What is next?
 - Add command explanation for various parameters of Gitleaks
