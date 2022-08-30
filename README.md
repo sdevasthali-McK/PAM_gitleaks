@@ -27,6 +27,18 @@ It analyzes the code and provides error outputs upon discovering secrets within 
 Installation is easy and uses 5 steps and takes ~15 mins (All steps are for MacOS/Linux) - 
 
 
+## Step 0: Installing Homebrew
+Homebrew (also called Brew) installs the stuff you need that Apple (or your Linux system) didn’t. [https://brew.sh](https://brew.sh/)
+
+The most straightforward way is to open terminal and run the following command - 
+
+```
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+```
+
+It might take ~15 mins initially but it is a one-time install
+
+
 ## Step 1: Installing gitleaks
 ```
 brew install gitleaks 
@@ -35,7 +47,7 @@ The above command would install the latest gitleaks from Homebrew and add it to 
 
 
 ## Step 2: Adding git-hooks
-Assuming you have github installed, we will now add a path for git-hooks.
+Assuming you have github installed (*check FAQ), we will now add a path for git-hooks.
 Configure hooksPath in user git configuration. The user git configuration generally is located at "~/.gitconfig". This file is hidden in nature so you would have to perform "ls -lart" in terminal or "cmd+shift+." (period) in finder on your root directory to view the file
 Open the file and add the following :-
 
@@ -122,6 +134,11 @@ FAQs
       5. Copy latest content from [https://mckinsey.box.com/s/kig70jdntmkumgd7d24wau8kruyzz1xs](https://mckinsey.box.com/s/ga3o5urv3qquhyyprbevvu2hg55rjvr0) and paste it in the terminal editor
       6. Press ```esc```
       7. Type ```:wq!``` and hit enter
+4. How do I check if Github is installed on my machine?
+   
+    In your Mac termincal - 
+        ```git --version```
+        You should see a response similar to `git version 2.32.1 (Apple Git-133)`
 
 What is next?
 - Add command explanation for various parameters of Gitleaks
