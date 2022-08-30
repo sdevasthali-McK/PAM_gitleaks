@@ -48,7 +48,7 @@ The above command would install the latest gitleaks from Homebrew and add it to 
 
 ## Step 2: Adding git-hooks
 Assuming you have github installed (*check FAQ), we will now add a path for git-hooks.
-Configure hooksPath in user git configuration. The user git configuration generally is located at "~/.gitconfig". This file is hidden in nature so you would have to perform "ls -lart" in terminal or "cmd+shift+." (period) in finder on your root directory to view the file
+Configure hooksPath in user git configuration. The user git configuration generally is located at "~/.gitconfig" (*check FAQ if file missing). This file is hidden in nature so you would have to perform "ls -lart" in terminal or "cmd+shift+." (period) in finder on your root directory to view the file
 Open the file and add the following :-
 
 ```
@@ -136,9 +136,13 @@ FAQs
       7. Type ```:wq!``` and hit enter
 4. How do I check if Github is installed on my machine?
    
-    In your Mac termincal - 
+    In your Mac terminal - 
         ```git --version```
         You should see a response similar to `git version 2.32.1 (Apple Git-133)`
+5. I am missing a .gitconfig file. How do I create it?
+    In your mac terminal -
+        ```git config --global user.email "<email>@mckinsey.com"```
+    
 
 What is next?
 - Add command explanation for various parameters of Gitleaks
