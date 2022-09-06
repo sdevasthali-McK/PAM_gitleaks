@@ -79,8 +79,15 @@ Please download the TOML file from the path - 
 https://mckinsey.box.com/s/ga3o5urv3qquhyyprbevvu2hg55rjvr0
 Store it on path "~/.git-hooks/" as file "~/.git-hooks/gitleaks.toml"
 
+You can either open the downloaded document using a notepad tool and then paste it it by using the following commands - 
+```
+touch ~/.git-hooks/gitleaks.toml
+vi ~/.git-hooks/gitleaks.toml
+<Press "I" on your keyboard> -> Paste using RTClick+Paste -> <Press Escape and type "!wq" and press Enter
+```
+or copy it using finder into he aforementioned path
 
-How do we run it?
+## How do we run it?
 There is plenty of documentation on the Gitleaks Git repository.
 For our purposes, we shall configure our own .toml file for the rules and provide a path to the code local repository
 
@@ -107,7 +114,7 @@ gitleaks detect --verbose --redact --source='[Path_To_Repository]' --config='[Pa
 
 For example: 
 ```
---verbose --redact --source=$(git rev-parse --show-toplevel) --config=$glpath --staged
+gitleaks detect --verbose --redact --source=$(git rev-parse --show-toplevel) --config=$glpath --staged
 ```
 
 Expected output?
