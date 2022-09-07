@@ -27,8 +27,8 @@ It analyzes the code and provides error outputs upon discovering secrets within 
 Installation is easy and uses 5 steps and takes ~15 mins (All steps are for MacOS/Linux) - 
 
 
-## Step 0: Installing Homebrew
-Homebrew (also called Brew) installs the stuff you need that Apple (or your Linux system) didn’t. [https://brew.sh](https://brew.sh/)
+## Step 0: Installing Homebrew (only required for Mac Systems)
+Homebrew (also called Brew) installs the stuff you need that Apple didn’t. [https://brew.sh](https://brew.sh/)
 
 The most straightforward way is to open terminal and run the following command - 
 
@@ -40,20 +40,101 @@ It might take ~15 mins initially but it is a one-time install
 
 
 ## Step 1: Installing gitleaks
+### - On Mac Systems
 ```
 brew install gitleaks 
 ```
 The above command would install the latest gitleaks from Homebrew and add it to your PATH variable.
 
+### - On R-Studio Workbench
+Create a `machineapps` folder if not present already. This is where we will install gitleaks and any future workbench app. 
+```
+cd ~
+mkdir machineapps
+```
+Note: The instructions are based on the directory structure listed in the steps. If you have different paths, you should be able to alter the commands to suit your environment.
+
+Now we shall clone gitleaks on our workbench from the creator's github page.
+```
+cd ~
+cd machineapps
+git clone https://github.com/zricethezav/gitleaks.git
+```
+This step has now brought all the packages required to install gitleaks on our machine. We will now proceed to actually install gitleaks with the following commands -
+```
+cd ~
+cd machineapps/gitleaks
+make build
+```
+This command takes ~1 min to run and should create a new file called "gitleaks" with no extension.
+
+We can test if gitleaks is executable by running the following command
+```
+~/machineapps/gitleaks/gitleaks version
+```
+It should result in an output similar to "v8.11.2"
+
+We are not done yet. 
+We want to be able to run gitleaks with a simple `gitleaks` command and not having to specify the installation path.
+For this, we will add our gitleaks installation to the linux terminal PATH variable.
+
+#### Adding to PATH
+Check if you have a ".bash_profile" file already. This file contains user specific installation paths.
+
+##### Checking if .bash_profile exists
+To check, simple run `cat ~/.bash_profile`. 
+If you do not get an error, you have the file present.
+
+##### Creating a .bash_profile if it doesn't exist
+```
+cd ~
+touch .bash_profile
+```
+
+##### Adding gitleaks to .bash_profile
+```
+vi .bash_profile
+<Insert> by pressing "I"
+```
+Right Click > Paste the following - 
+```export PATH=$PATH:~/machineapps/gitleaks/```
+
+Follow it up with saving and exiting the text editor
+```
+<Escape> by pressing Esc
+:wq!
+```
+
+Testing native gitleaks
+```
+echo $PATH
+gitleaks version
+```
+Your output should show a long string showcasing multiple installations as well as the version of gitleaks installed similar to "v8.11.2"
 
 ## Step 2: Adding git-hooks
-Assuming you have github installed (*check FAQ), we will now add a path for git-hooks.
-Configure hooksPath in user git configuration. The user git configuration generally is located at "~/.gitconfig" (*check FAQ if file missing). This file is hidden in nature so you would have to perform "ls -lart" in terminal or "cmd+shift+." (period) in finder on your root directory to view the file
-Open the file and add the following :-
+NOTE: These steps are common to both Mac Systems and Workbench. You will want to use the commands on Workbench while Finder commands work for Mac Systems.
 
+Assuming you have github installed (*check FAQ*), we will now add a path for git-hooks.
+Configure hooksPath in user git configuration. The user git configuration generally is located at "~/.gitconfig" (*check FAQ if file missing*). This file is hidden in nature so you would have to perform "ls -lart" in terminal or "cmd+shift+." (period) in finder on your root directory to view the file
+
+##### Opening ".gitconfig" in terminal
+```
+cd ~
+vi .gitconfig
+<Insert> by pressing "I"
+```
+
+##### Add the following :-
 ```
 [core]
 hooksPath = ~/.git-hooks
+```
+
+##### Save the file in Finder or in terminal using the following :-
+```
+<Escape> by pressing Esc
+:wq!
 ```
 
 
@@ -68,6 +149,16 @@ touch ~/.git-hooks/pre-commit
 Add the attached bash script to the "~/.git-hooks/pre-commit" file
 script - https://mckinsey.box.com/s/kig70jdntmkumgd7d24wau8kruyzz1xs
 
+##### On Workbench/Terminal
+```
+vi ~/.git-hooks/pre-commit
+<Insert> by pressing "I"
+```
+Right Click > Paste the script verbatim in its entirity.
+```
+<Escape> by pressing Esc
+:wq!
+```
 
 ## Step 4: Make the gitleaks configuration an executable
 ```
