@@ -270,6 +270,9 @@ FAQs
         ```git --version```
         You should see a response similar to `git version 2.32.1 (Apple Git-133)`
 5. I am missing a .gitconfig file. How do I create it?
-    - In your Mac or Workbench terminal -
+   - In your Mac or Workbench terminal -
         ```git config --global user.email "<email>@mckinsey.com"```
+6. I removed my secret, why is it still throwing an error?
+   - You need to revert your changes and then recommit your code.      
+    
     
