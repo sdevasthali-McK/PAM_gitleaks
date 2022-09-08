@@ -94,14 +94,18 @@ touch .bash_profile
 ##### Adding gitleaks to .bash_profile
 ```
 vi .bash_profile
-<Insert> by pressing "I"
 ```
+`
+<Insert> by pressing "I"
+`
 Right Click > Paste the following - 
 ```export PATH=$PATH:~/machineapps/gitleaks/```
 
 Follow it up with saving and exiting the text editor
-```
+`
 <Escape> by pressing Esc
+`
+```
 :wq!
 ```
 
@@ -122,8 +126,11 @@ Configure hooksPath in user git configuration. The user git configuration genera
 ```
 cd ~
 vi .gitconfig
-<Insert> by pressing "I"
 ```
+
+`
+<Insert> by pressing "I"
+`
 
 ##### Add the following :-
 ```
@@ -132,8 +139,10 @@ hooksPath = ~/.git-hooks
 ```
 
 ##### Save the file in Finder or in terminal using the following :-
-```
+`
 <Escape> by pressing Esc
+`
+```
 :wq!
 ```
 
@@ -142,6 +151,11 @@ Follow this up with creating a folder which will house all future git-hooks -:
 
 ```
 mkdir -p ~/.git-hooks
+```
+
+Now add a pre-commit file
+
+```
 touch ~/.git-hooks/pre-commit
 ```
 
@@ -152,17 +166,23 @@ script - https://mckinsey.box.com/s/kig70jdntmkumgd7d24wau8kruyzz1xs
 ##### On Workbench/Terminal
 ```
 vi ~/.git-hooks/pre-commit
+```
+`
 <Insert> by pressing "I"
-```
+`
+
 Right Click > Paste the script verbatim in its entirity.
-```
+
+`
 <Escape> by pressing Esc
+`
+```
 :wq!
 ```
 
 ## Step 4: Make the gitleaks configuration an executable
 ```
-sudo chmod +x ~/.git-hooks/pre-commit
+chmod +x ~/.git-hooks/pre-commit
 ```
 
 ## Step 5: Create and Store toml file for gitleaks
@@ -174,8 +194,11 @@ You can either open the downloaded document using a notepad tool and then paste 
 ```
 touch ~/.git-hooks/gitleaks.toml
 vi ~/.git-hooks/gitleaks.toml
-<Press "I" on your keyboard> -> Paste using RTClick+Paste -> <Press Escape and type "!wq" and press Enter
 ```
+
+`
+<Press "I" on your keyboard> -> Paste using RTClick+Paste -> <Press Escape and type "!wq" and press Enter
+`
 or copy it using finder into he aforementioned path
 
 ## How do we run it?
@@ -209,13 +232,23 @@ gitleaks detect --verbose --redact --source=$(git rev-parse --show-toplevel) --c
 ```
 
 Expected output?
+##### On your Mac System
 ![image](https://user-images.githubusercontent.com/88150915/140373532-97ac7d1b-ff38-4f6b-9d18-6074361e9c78.png)
+
+##### On your Workbench
+###### Commit without Secret
+<img width="633" alt="image" src="https://user-images.githubusercontent.com/88150915/189146013-2ac98206-5617-4d47-a4ea-c8a0044c187c.png">
+
+###### Commit with Secret
+<img width="633" alt="image" src="https://user-images.githubusercontent.com/88150915/189147359-936758d4-923a-4500-9be9-92409e7e1985.png">
+
 
 FAQs
 1. How do I update my gitleaks?
-  A. In your Mac terminal, use command ```brew install gitleaks```. This command assumes you have brew installed
+   - In your Mac terminal, use command ```brew install gitleaks```. This command assumes you have brew installed
+   - On your Workbench terminal, `Delete` the gitleaks folder under ~/machineapps/ directory and follow the steps of installation as listed
 2. How do I update the pre-commit file?
-    In your Mac terminal-
+    In your Mac or Workbench terminal-
       1. Navigate to the pre-commits file by using ```cd ~/.git-hooks```
       2. Update pre-commit using ```vi pre-commit```
       3. Press ```I``` on the keyboard for insert mode
@@ -224,7 +257,7 @@ FAQs
       6. Press ```esc```
       7. Type ```:wq!``` and hit enter
 3. How do I update the gitleaks.toml file?
-    In your Mac terminal-
+    In your Mac or Workbench terminal-
       1. Navigate to the pre-commits file by using ```cd ~/.git-hooks```
       2. Update pre-commit using ```vi gitleaks.toml```
       3. Press ```I``` on the keyboard for insert mode
@@ -233,14 +266,10 @@ FAQs
       6. Press ```esc```
       7. Type ```:wq!``` and hit enter
 4. How do I check if Github is installed on my machine?
-   
-    In your Mac terminal - 
+   - In your Mac or Workbench terminal - 
         ```git --version```
         You should see a response similar to `git version 2.32.1 (Apple Git-133)`
 5. I am missing a .gitconfig file. How do I create it?
-    In your mac terminal -
+    - In your Mac or Workbench terminal -
         ```git config --global user.email "<email>@mckinsey.com"```
     
-
-What is next?
-- Add command explanation for various parameters of Gitleaks
