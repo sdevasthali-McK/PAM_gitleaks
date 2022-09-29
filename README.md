@@ -55,11 +55,13 @@ mkdir machineapps
 Note: The instructions are based on the directory structure listed in the steps. If you have different paths, you should be able to alter the commands to suit your environment.
 
 Now we shall clone gitleaks on our workbench from the creator's github page.
+NOTE: We used the `git clone https://github.com/zricethezav/gitleaks.git` command earlier but gitleaks updates for v8.13.0 introduced issues. 
+Hence, we will stick to v8.12.0 as we have tested it on Workbench.
+
 ```
 cd ~
 cd machineapps
-~~git clone https://github.com/zricethezav/gitleaks.git~~ (ignore command until further notice)
-git clone --depth 1 --branch v8.12.0 https://github.com/zricethezav/gitleaks.git (utilize this command)
+git clone --depth 1 --branch v8.12.0 https://github.com/zricethezav/gitleaks.git
 ```
 This step has now brought all the packages required to install gitleaks on our machine. We will now proceed to actually install gitleaks with the following commands -
 ```
