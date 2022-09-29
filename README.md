@@ -58,7 +58,8 @@ Now we shall clone gitleaks on our workbench from the creator's github page.
 ```
 cd ~
 cd machineapps
-git clone https://github.com/zricethezav/gitleaks.git
+~~git clone https://github.com/zricethezav/gitleaks.git~~ (ignore command until further notice)
+git clone --depth 1 --branch v8.12.0 https://github.com/zricethezav/gitleaks.git (utilize this command)
 ```
 This step has now brought all the packages required to install gitleaks on our machine. We will now proceed to actually install gitleaks with the following commands -
 ```
