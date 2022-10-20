@@ -47,6 +47,13 @@ brew install gitleaks 
 The above command would install the latest gitleaks from Homebrew and add it to your PATH variable.
 
 ### - On R-Studio Workbench
+Let us start a new session of RStudio (any session will do but we will keep things clean).
+
+Navigate to the "Terminal" tab on Workbench. Your screen should look similar to 
+
+
+![image](https://user-images.githubusercontent.com/88150915/196962284-a3ef3dff-ba6d-463d-8af0-41b8808321dd.png)
+
 Create a `machineapps` folder if not present already. This is where we will install gitleaks and any future workbench app. 
 ```
 cd ~
@@ -111,6 +118,9 @@ Follow it up with saving and exiting the text editor
 ```
 :wq!
 ```
+
+**Now Restart your R Session in Workbench.**
+
 
 Testing native gitleaks
 ```
@@ -203,6 +213,8 @@ vi ~/.git-hooks/gitleaks.toml
 <Press "I" on your keyboard> -> Paste using RTClick+Paste -> <Press Escape and type "!wq" and press Enter
 `
 or copy it using finder into he aforementioned path
+
+**Now Restart the R Session in Workbench**
 
 ## How do we run it?
 There is plenty of documentation on the Gitleaks Git repository.
